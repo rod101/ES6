@@ -40,7 +40,7 @@ window.onload = function() {
     if (route) {
       view.innerHTML = "You are on the " + route.name + " path";
     } else {
-      view.innerHTML = "No route matches this pattern!";
+      view.innerHTML = "404!";
     }
   }
   
