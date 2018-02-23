@@ -1,5 +1,33 @@
 window.onload = function() {
  console.log('Dom has loaded')
+
+ //Create Router Constructor 
+
+ //Grap all active attribute routes
+ var activeRoutes = Array.from(document.querySelectorAll('[route]'));
+
+ function navigate(event){
+   var route = event.target.attributes[0].value;
+   var routeInfo = myFirstRouter.routes.filter(function(r){
+     return r.path === route;
+   })[0];
+   if(!routeInfo){
+    window.history.pushState({}, '', '404');
+     view.innerHTML = 'No route exists with this path';
+   }else{
+     window.history.pushState({}, 'name', routeInfo.path);
+     view.innerHTML = 'You have clicked the ' + routeInfo.name + ' route'
+   }
+
+ };
+
+//  add event listeners
+
+activeRoutes.forEach(function(route){
+  route.addEventListener('click', navigate, false)
+});
+
+
   var Router = function(name, routes){
     return {
          name: name,
