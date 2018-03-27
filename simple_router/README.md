@@ -2,10 +2,11 @@
 
 Simple router application writen in javascript 
 
-# Setup
+# Setup and Install dependencies
 
-clone and run npm install
+ - Clone 
+ - Run npm install
 
-# Runing the application
+# Start the server
 
 npm start
